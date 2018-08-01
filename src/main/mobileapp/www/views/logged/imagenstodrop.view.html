@@ -1,0 +1,125 @@
+<ion-view cache-view="false" view-title="ImagensToDrop" hide-back-button="true"> 
+  <ion-nav-buttons side="right"> 
+    <button class="button button-stable" ng-hide="ImagensToDrop.inserting || ImagensToDrop.editing" ng-click="ImagensToDrop.startInserting()"> <i class="icon ion-plus-round"></i> </button> 
+    <button class="button button-stable" ng-show="ImagensToDrop.inserting || ImagensToDrop.editing" ng-click="ImagensToDrop.post()"> <i class="icon ion-checkmark"></i> </button> 
+  </ion-nav-buttons> 
+  <ion-nav-buttons side="left"> 
+    <button class="button button-icon button-clear ion-navicon" ng-hide="ImagensToDrop.inserting || ImagensToDrop.editing" menu-toggle="left"> </button> 
+    <button class="button button-stable" ng-show="ImagensToDrop.inserting || ImagensToDrop.editing" ng-click="ImagensToDrop.cancel()"> <i class="icon ion-android-arrow-back"></i> </button> 
+  </ion-nav-buttons> 
+  <ion-content> 
+    <div ng-hide="ImagensToDrop.inserting || ImagensToDrop.editing" data-component="crn-datasource-filter" id="crn-datasource-filter-general" class=""> 
+      <label class="item item-input" id="cloud-search1"> <i class="icon ion-search placeholder-icon"></i> <input type="text" ng-model="vars.search" cronapp-filter="imagem_01;" cronapp-filter-operator="" cronapp-filter-autopost="true" crn-datasource="ImagensToDrop" value="" placeholder="{{'template.crud.search' | translate}}"> </label> 
+    </div> 
+    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854"> 
+      <datasource name="ImagensToDrop" entity="api/cronapi/crud/app.entity.ImagensToDrop" keys="id" rows-per-page="10" delete-message="Deseja remover?" class=""></datasource> 
+    </div> 
+    <div crn-datasource="ImagensToDrop" class="" ng-hide="ImagensToDrop.editing || ImagensToDrop.inserting"> 
+      <ion-list can-swipe="listCanSwipe"> 
+        <ion-item ng-repeat="rowData in datasource.data" class="item" ng-click="datasource.startEditing(rowData)"> 
+          <div class="row"> 
+            <div class="col"> 
+              <button ng-if="rowData.imagem_01" class="button" ng-click="cronapi.internal.downloadFileEntityMobile(datasource, 'imagem_01', $index)"> <span class="icon ion-android-download"></span> </button> 
+            </div> 
+            <div class="col"> 
+              <button ng-if="rowData.imagem_02" class="button" ng-click="cronapi.internal.downloadFileEntityMobile(datasource, 'imagem_02', $index)"> <span class="icon ion-android-download"></span> </button> 
+            </div> 
+            <div class="col"> 
+              <button ng-if="rowData.imagem_03" class="button" ng-click="cronapi.internal.downloadFileEntityMobile(datasource, 'imagem_03', $index)"> <span class="icon ion-android-download"></span> </button> 
+            </div> 
+            <div class="col"> 
+              <button ng-if="rowData.imagem_04" class="button" ng-click="cronapi.internal.downloadFileEntityMobile(datasource, 'imagem_04', $index)"> <span class="icon ion-android-download"></span> </button> 
+            </div> 
+            <div class="col"> 
+              <button ng-if="rowData.imagem_05" class="button" ng-click="cronapi.internal.downloadFileEntityMobile(datasource, 'imagem_05', $index)"> <span class="icon ion-android-download"></span> </button> 
+            </div> 
+            <div class="col"> 
+              <button ng-if="rowData.video_01" class="button" ng-click="cronapi.internal.downloadFileEntityMobile(datasource, 'video_01', $index)"> <span class="icon ion-android-download"></span> </button> 
+            </div> 
+          </div> 
+          <ion-option-button class="button-positive" ng-click="datasource.startEditing(rowData)"> 
+            <i class="icon ion-edit"></i> 
+          </ion-option-button> 
+          <ion-option-button class="button-assertive" ng-click="datasource.remove(rowData)">
+             &nbsp; 
+            <i class="icon ion-trash-a"></i> 
+          </ion-option-button> 
+        </ion-item> 
+      </ion-list> 
+    </div> 
+    <div ng-show="ImagensToDrop.editing || ImagensToDrop.inserting"> 
+      <form crn-datasource="ImagensToDrop"> 
+        <fieldset ng-disabled="!ImagensToDrop.editing &amp;&amp; !ImagensToDrop.inserting"> 
+          <div class="list"> 
+            <!-- imagem_01 begin --> 
+            <div class="component-holder ng-binding ng-scope" data-component="crn-dynamic-file"> 
+              <div class="item item-input item-stacked-label"> 
+                <label class="input-label">Imagem 01</label> 
+                <div class="form-group"> 
+                  <div dynamic-file="" accept=".jpg,.png,.gif,.jpeg" ng-model="ImagensToDrop.active.imagem_01" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                     {{"template.crud.clickToAddFile" | translate}} 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+            <!-- imagem_02 begin --> 
+            <div class="component-holder ng-binding ng-scope" data-component="crn-dynamic-file"> 
+              <div class="item item-input item-stacked-label"> 
+                <label class="input-label">Imagem 02</label> 
+                <div class="form-group"> 
+                  <div dynamic-file="" ng-model="ImagensToDrop.active.imagem_02" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                     {{"template.crud.clickToAddFile" | translate}} 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+            <!-- imagem_03 begin --> 
+            <div class="component-holder ng-binding ng-scope" data-component="crn-dynamic-file"> 
+              <div class="item item-input item-stacked-label"> 
+                <label class="input-label">Imagem 03</label> 
+                <div class="form-group"> 
+                  <div dynamic-file="" ng-model="ImagensToDrop.active.imagem_03" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                     {{"template.crud.clickToAddFile" | translate}} 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+            <!-- imagem_04 begin --> 
+            <div class="component-holder ng-binding ng-scope" data-component="crn-dynamic-file"> 
+              <div class="item item-input item-stacked-label"> 
+                <label class="input-label">Imagem 04</label> 
+                <div class="form-group"> 
+                  <div dynamic-file="" ng-model="ImagensToDrop.active.imagem_04" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                     {{"template.crud.clickToAddFile" | translate}} 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+            <!-- imagem_05 begin --> 
+            <div class="component-holder ng-binding ng-scope" data-component="crn-dynamic-file"> 
+              <div class="item item-input item-stacked-label"> 
+                <label class="input-label">Imagem 05</label> 
+                <div class="form-group"> 
+                  <div dynamic-file="" ng-model="ImagensToDrop.active.imagem_05" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                     {{"template.crud.clickToAddFile" | translate}} 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+            <!-- video_01 begin --> 
+            <div class="component-holder ng-binding ng-scope" data-component="crn-dynamic-file"> 
+              <div class="item item-input item-stacked-label"> 
+                <label class="input-label">Video 01</label> 
+                <div class="form-group"> 
+                  <div dynamic-file="" ng-model="ImagensToDrop.active.video_01" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                     {{"template.crud.clickToAddFile" | translate}} 
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </fieldset> 
+      </form> 
+    </div> 
+  </ion-content> 
+</ion-view>
