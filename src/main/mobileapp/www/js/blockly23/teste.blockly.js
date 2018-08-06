@@ -7,5 +7,5 @@ window.blockly.js.blockly.Teste = window.blockly.js.blockly.Teste || {};
  * Bloco
  */
 window.blockly.js.blockly.Teste.Executar = function() {
-	this.cronapi.screen.changeValueOfField("", '');
+	this.cronapi.screen.changeValueOfField("teste", '');
 }
