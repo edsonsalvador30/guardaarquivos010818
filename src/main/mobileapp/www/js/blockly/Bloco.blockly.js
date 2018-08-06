@@ -7,5 +7,5 @@ window.blockly.js.blockly.Bloco = window.blockly.js.blockly.Bloco || {};
  * Bloco
  */
 window.blockly.js.blockly.Bloco.Executar = function() {
-	this.cronapi.screen.changeValueOfField("", '');
+	this.cronapi.screen.changeValueOfField("", 'Edson');
 }

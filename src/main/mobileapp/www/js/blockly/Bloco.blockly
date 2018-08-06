@@ -16,7 +16,7 @@
         </value>
         <value name="ARG1">
           <shadow colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="E)Y;*Ef2A!qIfAMM{pdz" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
-            <field name="TEXT"/>
+            <field name="TEXT">Edson</field>
           </shadow>
         </value>
       </block>
